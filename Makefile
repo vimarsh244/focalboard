@@ -67,7 +67,7 @@ server-mac:
 server-linux:
 	mkdir -p bin/linux
 	$(eval LDFLAGS += -X "github.com/mattermost/focalboard/server/model.Edition=linux")
-	cd server; env GOOS=linux GOARCH=amd64 go build -ldflags '$(LDFLAGS)' -o ../bin/linux/focalboard-server ./main
+	cd server; env GOOS=linux GOARCH=arm64 go build -ldflags '$(LDFLAGS)' -o ../bin/linux/focalboard-server ./main
 
 server-win:
 	$(eval LDFLAGS += -X "github.com/mattermost/focalboard/server/model.Edition=win")
