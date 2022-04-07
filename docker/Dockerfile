@@ -2,7 +2,7 @@ FROM golang:alpine as gobuild
 
 RUN apk update && \
     apk add ca-certificates gcc git make musl-dev && \
-    git clone https://github.com/mattermost/focalboard && \
+    git clone https://github.com/vimarsh244/focalboard && \
     cd focalboard && \
     make server-linux
 
@@ -10,7 +10,7 @@ FROM node:alpine as nodebuild
 
 RUN apk update && \
     apk add ca-certificates git && \
-    git clone https://github.com/mattermost/focalboard && \
+    git clone https://github.com/vimarsh244/focalboard && \
     cd focalboard/webapp && \
     npm install && npm run pack
 
