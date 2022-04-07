@@ -50,7 +50,7 @@ server-mac: templates-archive ## Build server for Mac.
 server-linux: templates-archive ## Build server for Linux.
 	mkdir -p bin/linux
 	$(eval LDFLAGS += -X "github.com/mattermost/focalboard/server/model.Edition=linux")
-	cd server; env GOOS=linux GOARCH=amd64 go build -ldflags '$(LDFLAGS)' -tags '$(BUILD_TAGS)' -o ../bin/linux/focalboard-server ./main
+	cd server; env GOOS=linux GOARCH=arm64 go build -ldflags '$(LDFLAGS)' -tags '$(BUILD_TAGS)' -o ../bin/linux/focalboard-server ./main
 
 server-win: templates-archive ## Build server for Windows.
 	$(eval LDFLAGS += -X "github.com/mattermost/focalboard/server/model.Edition=win")
